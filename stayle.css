@@ -1,0 +1,262 @@
+/**{animation: TEST 20s linear infinite;}
+@keyframes TEST{
+    to  {transform: rotate(0deg);}
+    from{transform: rotate(360deg);}
+}*/
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    /*background-image: url("img/фон.png");*/
+
+    background-image: url("./img/фон3.jpg");
+    background-size: 500px 500px;
+
+    /*background: #b1b1b1;
+    animation: pulsating_body_color 8s ease-in-out infinite, _on 0.8s ease-in;*/
+    animation: fall 5s linear infinite, _on 0.7s linear;
+}
+/*@media(max-width: 1440px){
+    body{
+        animation-duration:10s;
+    }
+}
+@media(max-width: 960px){
+    body{
+        animation-duration:15s;
+    }
+}
+@media(max-width: 480px){
+    body{
+        animation-duration:20s;
+    }
+}*/
+
+@keyframes fall{
+    0%{
+        background-position: 0px 0px;
+    }
+    100%{
+        background-position: 500px 500px;
+    }
+}
+@keyframes pulsating_body_color{
+    0%{
+        background: #797979;
+    }
+    50%{
+        background: #b1b1b1;
+    }
+    100%{
+        background: #797979;
+    }
+}
+
+.Blocks{
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+}
+
+.Block2{
+    margin: 0 20%;
+}
+
+.Block1{
+    position: fixed;
+}
+
+.menu{
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: right;
+}
+.menu ol{
+    margin: 0 15px;
+}
+.menu a{
+    color: #700086;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 5px;
+    border-radius: 5px;
+    margin: 5px;
+    border: 2px solid #000000;
+    &:hover{
+        color: #d400ff;
+        text-shadow: 3px 3px 5px #000000;
+        /*font-size: 20px;*/
+        background-color: #700086;
+    }
+}
+
+.tabs{
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+.tabs ol{
+    margin: 15px 0;
+}
+.tabs a{
+    display: inline-block;
+    color: #700086;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 5px;
+    border-radius: 5px;
+    margin: 5px;
+    border: 2px solid #000000;
+    &:hover{
+        color: #d400ff;
+        text-shadow: 3px 3px 5px #000000;
+        /*font-size: 20px;*/
+        background-color: #700086;
+    }
+}
+
+.menu-coffee{
+    min-height: 216px;
+}
+
+@keyframes _on {
+    to  {opacity: 1;}
+    from{opacity: 0;}
+}
+
+.coffee{
+    text-shadow: 3px 3px 5px #000000;
+    background: #c0c0c0;
+    top: 10px;
+    right: 15px;
+    width: 200px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Елементи йдуть один під одним */
+    align-items: center;    /* Вирівнює все (і фото, і текст) по центру */
+    text-align: center;     /* Центрує текст всередині параграфів */
+    padding: 15px;          /* Додайте трохи відступу всередині, щоб не тисло */
+    box-shadow: 3px, 3px, 5px, 20px, #000000;
+    animation: _on 0.7s linear;
+}
+
+.coffee img {
+    border-radius: 10px;
+    width: 100px;
+    display: block; /* Робимо картинку блочним елементом */
+    margin: 0 auto 10px; /* Авто-відступи зліва та справа центрирують її */
+}
+.coffee div {
+    display: flex;
+    flex-direction: column;
+}
+.coffee div div {
+    display: flex;
+    flex-direction: row;
+}
+
+.infinite{
+    text-shadow: 3px 0px 5px #d400ff, -3px 0px 5px #700086, 0px 3px 5px #d202fc, 0px -3px 5px #da11cf;
+    animation: infinite-shadow 4s ease-in-out infinite;
+}
+@keyframes infinite-shadow{
+    0%{text-shadow: 3px 0px 5px #d400ff, -3px 0px 5px #700086, 0px 3px 5px #d202fc, 0px -3px 5px #da11cf;}
+    50%{text-shadow: 10px 0px 0px #d400ff, -10px 0px 0px #700086, 0px 10px 0px #d202fc, 0px -10px 0px #da11cf;}
+    100%{text-shadow: 3px 0px 5px #d400ff, -3px 0px 5px #700086, 0px 3px 5px #d202fc, 0px -3px 5px #da11cf;}
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-checkbox {
+    display: none; 
+}
+
+.section-trif {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.section-checkbox:checked ~ .section {
+    display: none;
+}
+
+.section-checkbox:checked ~ .section-trif {
+    transform: rotate(180deg);
+}
+
+/* 1. Приховуємо сам чекбокс */
+.modal-checkbox {
+    display: none;
+}
+
+/* 2. Початковий стан модального вікна (приховане) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Темний фон */
+    display: none; /* ПРИХОВАНО за замовчуванням */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 3. ГОЛОВНА МАГІЯ: показуємо вікно, коли чекбокс натиснуто */
+/* Селектор "+" означає: знайти .modal, який іде одразу після натиснутого чекбокса */
+.modal-checkbox:checked + .modal {
+    display: flex;
+}
+
+/* 4. Оформлення контенту вікна */
+.modal-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 400px;
+    text-align: center;
+    color: black; /* Щоб текст було видно на білому фоні */
+    text-shadow: 3px 3px 5px #0e0e0e;
+    border: 2px solid #770073;
+}
+
+/* 5. Кнопка закриття */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #333;
+    &:hover{
+        text-shadow: 3px 0px 5px #d400ff, -3px 0px 5px #700086, 0px 3px 5px #d202fc, 0px -3px 5px #da11cf;
+    }
+}
+
+.btn{
+    color: #700086;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1px 1px;
+    border-radius: 5px;
+    margin: 5px;
+    border: 2px solid #000000;
+    &:hover{
+        color: #d400ff;
+        text-shadow: 3px 3px 5px #000000;
+        /*font-size: 20px;*/
+        background-color: #700086;
+    }
+}
+
+#willy{background-color: #c202fc;}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stayle.css">
+    <title>Кафе К♾ФЕ</title>
+</head>
+<body>
+
+    <header class="min" id="_up">
+        <h1 class="infinite"><marquee>К♾ФЕ</marquee></h1>
+    </header>
+
+    <nav>
+        <ol class="menu">
+            <li class="bin"><a href="#home">Головна </a></li>
+            <li class="bin"><a href="#menu">Меню </a></li>
+            <li class="bin"><a href="#contacts">Контакти </a></li>
+        </ol>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Ласкаво просимо до нашого кафе</h1>
+        <p>Місце, де народжується натхнення та смачна кава</p>
+        <a href="#menu" class="btn">Переглянути меню</a>
+    </section>
+    
+    <main class="container">
+        <h2 id="menu" style="text-align: center;">Наше Меню</h2>
+        <div class="Blocks">
+            <div class="Block1">
+                <nav>
+                    <ul class="tabs"><!--T == tabs -->
+                        <li class="bin"><a href="#TLactose-free">Lactose-free </a></li>
+                        <li class="bin"><a href="#TWithout-adequacy" class="infinite">Without adequacy </a></li>
+                        <li class="bin"><a href="#TCoffee">Coffee </a></li>
+                        <li class="bin"><a href="#TNon-coffee">Non-coffee </a></li>
+                        <li class="bin"><a href="#TDesserts">Desserts </a></li>
+                        <li class="bin"><a href="#TTea">Tea </a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="Block2">
+                <div>карзіна:</div>
+                <div id="willy"></div>
+                <button  id="clear">очистеть</button>
+                <div class="menu-coffee">
+                    <div>
+                        <label for="iLactose-free" id="TLactose-free">Lactose-free </label>
+                        <input id="iLactose-free" type="checkbox" class="section-checkbox">
+                        <label for="iLactose-free" class="section-trif">&utrif;</label>
+                        <div class="section"></div>
+                    </div>
+
+                    <div>
+                        <label for="iWithout-adequacy" id="TWithout-adequacy">Without adequacy </label>
+                        <input id="iWithout-adequacy" type="checkbox" class="section-checkbox">
+                        <label for="iWithout-adequacy" class="section-trif">&utrif;</label>
+                        <div class="section"></div>
+                    </div>
+
+                    <div>
+                        <label for="iCoffee" id="TCoffee">Coffee </label>
+                        <input id="iCoffee" type="checkbox" class="section-checkbox">
+                        <label for="iCoffee" class="section-trif">&utrif;</label>
+                        <div class="section"></div>
+                    </div>
+
+                    <div>
+                        <label for="iNon-coffee" id="TNon-coffee">Non-coffee </label>
+                        <input id="iNon-coffee" type="checkbox" class="section-checkbox">
+                        <label for="iNon-coffee" class="section-trif">&utrif;</label>
+                        <div class="section"></div>
+                    </div>
+
+                    <div>
+                        <label for="iDesserts" id="TDesserts">Desserts </label>
+                        <input id="iDesserts" type="checkbox" class="section-checkbox">
+                        <label for="iDesserts" class="section-trif">&utrif;</label>
+                        <div class="section"></div>
+                    </div>
+
+                    <div>
+                        <label for="iTea" id="TTea">Tea </label>
+                        <input id="iTea" type="checkbox" class="section-checkbox">
+                        <label for="iTea" class="section-trif">&utrif;</label>
+                        <div class="section"></div>
+                    </div>
+
+                    <script src="./script.js"></script>
+                </div>
+            </div>
+        </div>
+            
+        <label for="modal-toggle" class="btn">?</label>
+
+        <input type="checkbox" id="modal-toggle" class="modal-checkbox">
+
+        <div class="modal">
+            <div class="modal-content">
+                <label for="modal-toggle" class="close-btn">&times;</label>
+                <h3>!</h3>
+                <p>ажедаемиє время випалненіє заказа <b class="infinite">∞</b> мінут</p>
+            </div>
+        </div>
+<!--
+        <label for="modal-test" class="btn">Test</label>
+        <input type="checkbox" id="modal-test" class="modal-checkbox">
+
+        <div class="modal">
+            <div class="modal-content">
+                <label for="modal-test" class="close-btn">&times;</label>
+                <h3>Тестове вікно</h3>
+                <p>Тут може бути ваш текст.</p>
+            </div>
+        </div>
+-->
+
+    </main>
+    
+    <footer id="contacts">
+        <a href="#_up">up</a>
+        <p>Адреса: вул. ?, ?, м. ?</p>
+        <p>Тел: +000 00 000 00 00</p>
+        <p>&copy;infinite coffee</p>
+    </footer>
+
+</body>
+</html>
